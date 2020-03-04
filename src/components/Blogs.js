@@ -12,7 +12,7 @@ const Blogs = () => {
       setBlogs(data);
     };
     fetchData();
-  });
+  },{});
 
   return (
     <div>
