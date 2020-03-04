@@ -9,9 +9,11 @@ import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Home} />
+      </div>
+    </Router>
   );
 }
 
