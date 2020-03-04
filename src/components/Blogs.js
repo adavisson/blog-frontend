@@ -15,20 +15,28 @@ const Blogs = () => {
     fetchData();
   },{});
 
+  const renderPosts = () => {
+    return (
+      <>
+        {blogs.map(post => {
+          return (
+            <Card id={post.id}>
+              <Card.Body>
+                <Card.Title>{post.title}</Card.Title>
+                <Card.Text>{`${post.content.substring(0,120)}...`}</Card.Text>
+                <Button variant="primary">View Blog Post</Button>
+              </Card.Body>
+            </Card>
+          )
+        })}
+      </>
+    )
+  }
+
   return (
     <div className="container">
       <h1>Blog Posts</h1>
-      {blogs.map(post => {
-        return (
-          <Card>
-            <Card.Body>
-              <Card.Title>{post.title}</Card.Title>
-              <Card.Text>{post.content}</Card.Text>
-              <Button variant="primary">View Blog Post</Button>
-            </Card.Body>
-          </Card>
-        )
-      })}
+      {renderPosts()}
     </div>
   );
 }
