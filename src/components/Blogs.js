@@ -16,7 +16,7 @@ const Blogs = () => {
   },{});
 
   return (
-    <div>
+    <div className="container">
       <h1>Blog Posts</h1>
       {blogs.map(post => {
         return (
