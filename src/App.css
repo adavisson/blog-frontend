@@ -78,7 +78,8 @@ form {
 .card {
   min-width: 75%;
   max-width: 95%;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 2px solid #f66733;
   border-radius: .4rem;
 }
