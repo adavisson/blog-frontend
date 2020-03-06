@@ -15,9 +15,9 @@ const Post = (props) => {
   },{});
 
   return (
-    <div>
+    <div className="post">
       <h1>{post.title}</h1>
-      <p>{`Date: ${post.date}`.substring(0,16)}</p>
+      <p>{`Posted on: ${post.date}`.substring(0,21)}</p>
       <p>{post.content}</p>
     </div>
   );
