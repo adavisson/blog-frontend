@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Table, Button} from 'react-bootstrap';
 
 const blogUrl = "http://localhost:3001/blogs";
 
@@ -14,12 +15,35 @@ const EditBlogs = () => {
     fetchData();
   },{});
 
+  const handleDelete = e => {
+
+  }
+
   return ( 
-    <div>
+    <div className="blog-table">
       <h1>Blogs</h1>
-      {blogs.map(post => {
-        return <p>{post.title} </p>
-      })}
+      <Table striped border hover>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {blogs.map(post => {
+            return(
+              <tr>
+                <td>{post.id}</td>
+                <td>{post.title}</td>
+                <td>{post.date}</td>
+                <td><Button onClick={handleDelete}>Delete</Button></td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </Table>
     </div>
   );
 }

@@ -54,6 +54,10 @@ form {
   max-width: 95%;
 }
 
+table {
+  border: 2px solid #f66733;
+}
+
 .navbar {
   background-color: #f66733;
   margin-bottom: 25px;
@@ -113,6 +117,10 @@ form {
   background-color: white;
   min-width: 65%;
   padding: 15px;
+}
+
+.blog-table {
+  margin: 25px;
 }
 
 #formTitle {
