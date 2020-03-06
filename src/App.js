@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Blogs from './components/Blogs';
 import NewBlog from './components/NewBlog';
+import EditBlogs from './components/EditBlogs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/blogs" component={Blogs} />
         <Route path="/blogs/new" component={NewBlog} />
+        <Route path="/blogs/edit" component={EditBlogs} />
       </div>
     </Router>
   );
