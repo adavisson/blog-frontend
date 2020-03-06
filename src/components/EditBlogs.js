@@ -5,6 +5,7 @@ const blogUrl = "http://localhost:3001/blogs";
 
 const EditBlogs = () => {
   const [blogs,setBlogs] = useState([]);
+  const [deleted, setDeleted] = useState(0);
 
   useEffect(() => {
     const fetchData = async () =>{
@@ -13,10 +14,16 @@ const EditBlogs = () => {
       setBlogs(data);
     };
     fetchData();
-  },{});
+  },[deleted]);
 
-  const handleDelete = e => {
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    const configObject = {
+      method: "DELETE"
+    };
 
+    await fetch(`${blogUrl}/${e.target.value}`, configObject);
+    setDeleted(deleted + 1);
   }
 
   return ( 
@@ -37,8 +44,8 @@ const EditBlogs = () => {
               <tr>
                 <td>{post.id}</td>
                 <td>{post.title}</td>
-                <td>{post.date}</td>
-                <td><Button onClick={handleDelete}>Delete</Button></td>
+                <td>{`${post.date}`.substring(0,10)}</td>
+                <td><Button value={post.id} onClick={handleDelete}>Delete</Button></td>
               </tr>
             )
           })}
